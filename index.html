@@ -27,43 +27,74 @@
 	<body>
 		<!-- Windows jQuery -->
 		<section id="p1" class="window">
-			<div class="content">
-				<h1>Welcome</h1>
-				<div id="weather"></div>
-				<p>Welcome. Functionalities are being tested out so it's not yet complete but I hope you enjoy!</p>
+				<div class="content">
+					<h1>Welcome</h1>
+					<div id="weather"></div>
+					<p>Welcome. Functionalities are being tested out so it's not yet complete but I hope you enjoy!</p>
 			</div>
 		</section>
 		<section id="p2" class="window">
+			<div class="contentbody">
+				<div id="cards">
+<!-- 					<div class="card">
+						<h4>Tom Brady</h4>
+						<div class="desc">
+							<p class="cardName">Tom Brady</p>
+							<p class="cardDesc">New England Patriots</p>
+							<p class="cardPhone">(555) 555-5555</p>
+							<p class="cardEmail">t.brady@gmail.com</p>
+						</div>
+					</div>
+					<div class="card">
+						<h4>Peyton Manning</h4>
+						<div class="desc">
+							<p class="cardName">Peyton Manning</p>
+							<p class="cardDesc">Denver Broncos</p>
+							<p class="cardPhone">(555) 555-5555</p>
+							<p class="cardEmail">p.manning@gmail.com</p>
+						</div>
+					</div> -->
+				</div>
+				<form id="cardCreator">
+					<p>Name: <input type="text" id="iCardName" name="iCardName"></p>
+					<p>Description: <input type="text" id="iCardDesc" name="iCardName"></p>
+					<p>Phone: <input type="text" id="iCardPhone" name="iCardName"></p>
+					<p>Email: <input type="text" id="iCardEmail" name="iCardName"></p>
+					<input type="submit" id="iNewCard" value="Add Card">
+				</form>
+				<button id="cCBut"><img src="./png/plus-b.png"></button>
+			</div>
 		</section>
 		<section id="p3" class="window">
+			<div class="contentbody">
+			</div>
 		</section>
 		<section id="p4" class="window">
-			<div class="flexslider" id="content">
-				<ul class="slides"> 
-					<!--Images from unsplash.com-->
-					<!-- Flexslider jQuery -->
-					<li><img src="./img/img0.jpeg"></li>
-					<li><img src="./img/img1.jpeg"></li>
-					<li><img src="./img/img2.jpeg"></li>
-					<li><img src="./img/img3.jpeg"></li>
-				</ul>
-			</div>
+				<div class="flexslider" id="content">
+					<ul class="slides"> 
+						<!--Images from unsplash.com-->
+						<!-- Flexslider jQuery -->
+						<li><img src="./img/img0.jpeg"></li>
+						<li><img src="./img/img1.jpeg"></li>
+						<li><img src="./img/img2.jpeg"></li>
+						<li><img src="./img/img3.jpeg"></li>
+					</ul>
+				</div>
 		</section>
 		<section id="p5" class="window">
-			<div class="content">
-				<h2 id="gitHead">My Github Repos</h2>
-				<div id="github">
-					<div class="reps" id="cCard" data-repo="HowiJ/ContactCard"></div>
-					<div class="reps" id="vDate" data-repo="HowiJ/Validate"></div>
+				<div class="content">
+					<h2 id="gitHead">My Github Repos</h2>
+					<div id="github">
+						<div class="reps" id="cCard" data-repo="HowiJ/ContactCard"></div>
+						<div class="reps" id="vDate" data-repo="HowiJ/Validate"></div>
+					</div>
 				</div>
-			</div>
 		</section>
 		<section id="p6" class="window">
-			<div class="content">
-				<div>Icons made by <a href="http://www.flaticon.com/authors/anton-saputro" title="Anton Saputro">Anton Saputro</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
-				<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
-
-			</div>
+				<div class="content">
+					<div>Icons made by <a href="http://www.flaticon.com/authors/anton-saputro" title="Anton Saputro">Anton Saputro</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+					<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+				</div>
 		</section>
 
 		<!-- <button id="debug">Debug</button> -->

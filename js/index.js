@@ -44,8 +44,52 @@ $( document ).ready( function() {
 	//Submit buttons return false
 	submit( "#submit", "#signup");
 	submit( "#send", "#contactme");
-})
 
+
+	//////////////////////////////////////////////////////
+	//					Page Cards  					//
+	//////////////////////////////////////////////////////
+	var cardName = "";
+	var cardDesc = "";
+	var cardPhone = "";
+	var cardEmail = "";
+	var card = ""
+
+	$(document).on("click", ".card", function() {
+		$(this).children().toggle();
+	})
+
+	$("#cCBut").click( function() {
+		createSlide();
+	})
+	//return submit button
+	$("#iNewCard").click( function() {
+		getCard();
+		createCard();
+		createSlide();
+
+		return false;
+	})
+
+	function createSlide() {
+		if ( $("#cardCreator").css("display")!="none" ) {
+			$("#cCBut").css("border-bottom", "1px solid #4C4C4C");
+			console.log('yes border');
+		} else {
+			$("#cCBut").css("border-bottom", "0 none");
+		}
+		$("#cardCreator").slideToggle();
+	}
+	function getCard() {
+		cardName = $("#iCardName").val();
+		cardDesc = $("#iCardDesc").val();
+		cardPhone = $("#iCardPhone").val();
+		cardEmail = $("#iCardEmail").val();
+	}
+	function createCard() {
+		$("#cards").append("<div class='card'><h4>"+cardName+"</h4><div class='desc'><p class='cardName'>"+cardName+"</p><p class='cardDesc'>"+cardDesc+"</p><p class='cardPhone'>"+cardPhone+"</p><p class='cardEmail'>"+cardEmail+"</p></div></div>");
+	}
+})
 //returns page IDs as hard-coded for menu
 //CHANGE THIS FOR PAGES
 function checkmenu ( id, pages ) {
@@ -169,6 +213,7 @@ function flex() {
 	$(".flexslider").flexslider();
 	//console.log('flexslider initiated');
 }
+
 
 //Initiates countdown clock Page 'Weekend'
 function ctd () {
