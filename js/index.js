@@ -1,6 +1,6 @@
 $( document ).ready( function() {
 	//Number of Pages available to scroll to (with content)
-	var pages = 6;
+	var pages = 5;
 
 	$("#signup").hide();
 	$("#contactme").hide();
@@ -11,6 +11,7 @@ $( document ).ready( function() {
 	view( pages );
 	weat();
 	$('.flexslider').flexslider();
+	$("#contactme").draggable();
 
 	//Github jQuery initialize
 	$("[data-repo]").github();
@@ -46,6 +47,11 @@ $( document ).ready( function() {
 	submit( "#submit", "#signup");
 	submit( "#send", "#contactme");
 
+	//Contact me X button
+	$("#close").click( function() {
+		$("#contactme").slideToggle();
+	})
+
 
 	//////////////////////////////////////////////////////
 	//					Page Cards  					//
@@ -57,6 +63,10 @@ $( document ).ready( function() {
 	var cardPhone = "";
 	var cardEmail = "";
 	var card = ""
+
+	if ( $("#cards").text()!=""  ) {
+		$("#cardCreator").slideToggle();
+	} 
 
 	$(document).on("click", ".card", function() {
 		$(this).children().toggle();

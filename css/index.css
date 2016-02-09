@@ -21,6 +21,21 @@ form:hover {
 /*			Contact me 			*/
 /*//////////////////////////////*/
 /*Contact Me Style*/
+#close {
+	position: absolute;
+	background-color: transparent;
+	top: 17px;
+	right: 25px;
+	width: 15px;
+	height: 15px;
+}
+#close:hover {
+	cursor: pointer;
+}
+#close img {
+	width: 100%;
+	height: 100%;
+}
 #contactme {
 	position: fixed;
 	width: 300px;
@@ -30,10 +45,14 @@ form:hover {
 	left: 5px;
 
 	background-color: #FFFFFF;
+	border: 1px solid #7F7F7Ffd;
 
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
 	border-radius:10px;
+}
+#contactme * {
+	color: #7F7F7F;
 }
 #contactme:hover {
 	cursor: default;
@@ -162,7 +181,7 @@ input {
 }
 /*nth-child(5) because signup is still in the code 
 --------Update per page*/
-#menu li:nth-child(8) {
+#menu li:nth-child(7) {
 	border-right: 0 none;
 }
 #menu li a {
@@ -367,7 +386,7 @@ input {
 	padding: 10px;
 }
 .reps {
-	width: 49%;
+	width: 100%;
 	display: inline-block;
 }
 .reps * {
