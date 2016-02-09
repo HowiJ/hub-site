@@ -38,10 +38,6 @@ $( document ).ready( function() {
 		}, 100);
 	})
 
-	//Z-Index for menu to be above jquery rendered pictures
-	$("#menu").css("z-index", 4000);
-	$("#signup").css("z-index", 4000);
-	$("#contactme").css("z-index", 4000);
 
 	//Submit buttons return false
 	submit( "#submit", "#signup");
@@ -112,6 +108,12 @@ $( document ).ready( function() {
 		});
 
 	}
+
+	//Z INDEX///////////////////////////////////////////////
+	//Z-Index for menu to be above jquery rendered pictures
+	$("#menu").css("z-index", 9001);
+	$("#signup").css("z-index", 4000);
+	$("#contactme").css("z-index", 4000);
 })
 
 //////////////////////////////////////////////////////
