@@ -24,6 +24,7 @@ $( document ).ready( function() {
 		scto( "#sp"+i, "#p"+i );
 	}
 
+	$("#refresh").click( function() {weat()});
 
 	//on hover, show menu, on !hover, hide
 	$( "#menuhov" ).hover( function() {
@@ -50,6 +51,7 @@ $( document ).ready( function() {
 	//					Page Cards  					//
 	//////////////////////////////////////////////////////
 	cCHide();
+	$(".cards").mCustomScrollbar();
 	var cardName = "";
 	var cardDesc = "";
 	var cardPhone = "";
@@ -73,12 +75,6 @@ $( document ).ready( function() {
 	})
 
 	function createSlide() {
-		if ( $("#cardCreator").css("display")!="none" ) {
-			$("#cCBut").css("border-bottom", "1px solid #4C4C4C");
-			console.log('yes border');
-		} else {
-			$("#cCBut").css("border-bottom", "0 none");
-		}
 		$("#cardCreator").slideToggle();
 	}
 	function getCard() {
@@ -96,8 +92,7 @@ $( document ).ready( function() {
 			event.stopPropagation();
 			$(document).on("click", ".card", function() {
 				if (  $("*").css("cursor")=="crosshair"  ) {
-					$(this).hide();
-					console.log("hide");
+					$(this).remove();
 					$("*").css("cursor", "");
 				}
 			})
@@ -108,6 +103,10 @@ $( document ).ready( function() {
 
 	}
 })
+
+//////////////////////////////////////////////////////
+//			Submit and checkpages  					//
+//////////////////////////////////////////////////////
 //returns page IDs as hard-coded for menu
 //CHANGE THIS FOR PAGES
 function checkmenu ( id, pages ) {

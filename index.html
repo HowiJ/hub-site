@@ -21,6 +21,8 @@
 		<link rel="stylesheet" href="./css/flexslider.css" type="text/css">
 		<link rel="stylesheet" type="text/css" href="./css/base.css">
 		<link rel="stylesheet" type="text/css" href="./css/countdown.css">
+		<link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css">
 
 
 	</head>
@@ -29,33 +31,15 @@
 		<section id="p1" class="window">
 				<div class="content">
 					<h1>Welcome</h1>
+					<button id="refresh"><img src="./png/refresh-w.png"></button>
 					<div id="weather"></div>
-					<p>Welcome. Functionalities are being tested out so it's not yet complete but I hope you enjoy!</p>
 			</div>
 		</section>
 		<section id="p2" class="window">
 			<div class="contentbody">
-				<div id="cards">
-					<!-- <div class="card">
-						<h4>Tom Brady</h4>
-						<div class="desc">
-							<p class="cardName">Tom Brady</p>
-							<p class="cardDesc">New England Patriots</p>
-							<p class="cardPhone">(555) 555-5555</p>
-							<p class="cardEmail">t.brady@gmail.com</p>
-						</div>
-					</div>
-					<div class="card">
-						<h4>Peyton Manning</h4>
-						<div class="desc">
-							<p class="cardName">Peyton Manning</p>
-							<p class="cardDesc">Denver Broncos</p>
-							<p class="cardPhone">(555) 555-5555</p>
-							<p class="cardEmail">p.manning@gmail.com</p>
-						</div>
-					</div> -->
-				</div>
-				<button class="cCB" id="cCHide"><img src="./png/x.png"></button>
+				<h1 class="pageTitle" id="cardTitle">Cards</h1>
+				<div id="cards"></div>
+				<button class="cCB" id="cCHide"><img src="./png/x-w.png"></button>
 				<form id="cardCreator">
 					<p>Name: <input type="text" id="iCardName" name="iCardName"></p>
 					<p>Description: <input type="text" id="iCardDesc" name="iCardName"></p>
@@ -63,11 +47,19 @@
 					<p>Email: <input type="text" id="iCardEmail" name="iCardName"></p>
 					<input type="submit" id="iNewCard" value="Add Card">
 				</form>
-				<button class="cCB" id="cCBut"><img src="./png/plus-b.png"></button>
+				<button class="cCB" id="cCBut"><img src="./png/plus-w.png"></button>
 			</div>
 		</section>
 		<section id="p3" class="window">
 			<div class="contentbody">
+				<h1 class="pageTitle" id="tripTitle">Trips</h1>
+				<div id="trips">
+
+				</div>
+				<button class="cCB" id="cTHide"><img src="./png/x-w.png"></button>
+				<form id="tripMenu">
+				</form>
+				<button class="cCB" id="cTBut"><img src="./png/plus-w.png"></button>
 			</div>
 		</section>
 		<section id="p4" class="window">
@@ -88,6 +80,7 @@
 					<div id="github">
 						<div class="reps" id="cCard" data-repo="HowiJ/ContactCard"></div>
 						<div class="reps" id="vDate" data-repo="HowiJ/Validate"></div>
+						<div class="reps" id="vDate" data-repo="HowiJ/hub-site"></div>
 					</div>
 				</div>
 		</section>
@@ -150,5 +143,9 @@
 		<script type="text/javascript" src="./js/jquery.github.js"></script>
 		<!-- SimpleWeather jQuery AddOn -->
 		<script type="text/javascript" src="./js/jquery.simpleWeather.js"></script>
+		<!-- Custom Scrollbar jQuery AddOn -->
+		<script type="text/javascript" src="./js/jquery.mCustomScrollbar.js"></script>
+		<!-- jQuery UI jQuery AddOn -->
+		<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
 	</footer>
 </html>

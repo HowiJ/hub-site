@@ -223,42 +223,56 @@ input {
 	width: 80%;
 
 	margin: 7% 10%;
+	margin-top: 5%;
 
 	/*outline: 1px dashed white;*/
 }
-
+#refresh {
+	background-color: transparent;
+}
+#refresh:hover {
+	cursor: pointer;
+}
 /*//////////////////////////////*/
 /*  	   Page CONTACT			*/
 /*//////////////////////////////*/
+.pageTitle {
+	font-size: 46px;
+	border-bottom: 1px solid white;
+	margin-bottom: 20px;
+}
 .cCB {
 	position: absolute;
-	right: 125px;
-	top: 115px;
+	left: 110px;
+	top: 145px;
 	width: 40px;
 	height: 40px;
-	border: 1px solid #4C4C4C;
-	background-color: white;
+	/*border: 1px solid #4C4C4C;*/
+	background-color: transparent;
 	border-bottom: 0 none;
 }
 .cCB:hover {
 	cursor: pointer;
 }
 #cCHide {
-	top: 165px;
-	border-bottom: 1px solid #4C4C4C;
+	top: 195px;
+	/*border-bottom: 1px solid #4C4C4C;*/
+}
+#cTHide {
+	top: 195px;
 }
 #cardCreator {
 	background-color: white;
 	position: absolute;
-	top: 154px;
-	right: 125px;
+	top: 142px;
+	left: 152px;
 	height: auto;
 	width: 300px;
 	padding: 20px;
 	border: 1px solid #4C4C4C;
-	-webkit-border-radius: 5px 0 5px 5px;
-	-moz-border-radius: 5px 0 5px 5px;
-	border-radius: 5px 0 5px 5px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 }
 #cardCreator * {
 	color: #808080;
@@ -269,7 +283,9 @@ input {
 }
 #cards {
 	width: auto;
-	height: auto;
+	height: 730px;
+	overflow: auto;
+
 	/*outline: 1px dashed green;*/
 }
 #iNewCard {
@@ -286,7 +302,6 @@ input {
 	margin: 5px;
 	display: inline-block;
 	text-align: left;
-
 
 	outline: 2px solid #7F7F7F;
 
@@ -317,10 +332,10 @@ input {
 /*			Page IMG 			*/
 /*//////////////////////////////*/
 #content {
-	margin-left: -26%;
-	margin-top: -16%;
+	margin-left: -30%;
+	margin-top: -20%;
 	position: absolute;
-	width: 50%;
+	width: 60%;
 	height: auto;
 	outline: 3px solid #FFFFFF;
 	top: 50%;
@@ -354,6 +369,9 @@ input {
 .reps {
 	width: 49%;
 	display: inline-block;
+}
+.reps * {
+	color: #808080;
 }
 
 /*//////////////////////////////*/
@@ -411,7 +429,11 @@ input {
 	width: 70px;
 	height: 30px;
 	margin: 20px 5px;
-	padding: 5px;
+	padding: 0px 2px;
+	padding-top: 10px;
 	display: inline-block;
-	outline: 2px solid white;
+	border: 3px solid white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 }
