@@ -49,6 +49,7 @@ $( document ).ready( function() {
 	//////////////////////////////////////////////////////
 	//					Page Cards  					//
 	//////////////////////////////////////////////////////
+	cCHide();
 	var cardName = "";
 	var cardDesc = "";
 	var cardPhone = "";
@@ -88,6 +89,23 @@ $( document ).ready( function() {
 	}
 	function createCard() {
 		$("#cards").append("<div class='card'><h4>"+cardName+"</h4><div class='desc'><p class='cardName'>"+cardName+"</p><p class='cardDesc'>"+cardDesc+"</p><p class='cardPhone'>"+cardPhone+"</p><p class='cardEmail'>"+cardEmail+"</p></div></div>");
+	}
+	function cCHide() {
+		$("#cCHide").click( function() {
+			$('*').css("cursor", "crosshair");
+			event.stopPropagation();
+			$(document).on("click", ".card", function() {
+				if (  $("*").css("cursor")=="crosshair"  ) {
+					$(this).hide();
+					console.log("hide");
+					$("*").css("cursor", "");
+				}
+			})
+			$(document).click( function() {
+				$("*").css("cursor", "");
+			})
+		});
+
 	}
 })
 //returns page IDs as hard-coded for menu

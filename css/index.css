@@ -230,7 +230,7 @@ input {
 /*//////////////////////////////*/
 /*  	   Page CONTACT			*/
 /*//////////////////////////////*/
-#cCBut {
+.cCB {
 	position: absolute;
 	right: 125px;
 	top: 115px;
@@ -240,8 +240,12 @@ input {
 	background-color: white;
 	border-bottom: 0 none;
 }
-#cCBut:hover {
+.cCB:hover {
 	cursor: pointer;
+}
+#cCHide {
+	top: 165px;
+	border-bottom: 1px solid #4C4C4C;
 }
 #cardCreator {
 	background-color: white;
