@@ -1,12 +1,17 @@
 $( document ).ready( function() {
+	//Number of Pages available to scroll to (with content)
+	var pages = 6;
+
 	$("#signup").hide();
 	$("#contactme").hide();
 	windows();
 	flex();
 	ctd();
 	signCon();
-	view();
+	view( pages );
 	weat();
+	$('.flexslider').flexslider();
+
 	//Github jQuery initialize
 	$("[data-repo]").github();
 
@@ -15,9 +20,21 @@ $( document ).ready( function() {
 
 	//Scroll to pages 
 	//for var i = 1, 6 is the number of pages with content, i++
-	for ( var i=1; i<=6; i++ ) {
+	for ( var i=1; i<=pages; i++ ) {
 		scto( "#sp"+i, "#p"+i );
 	}
+
+
+	//on hover, show menu, on !hover, hide
+	$( "#menuhov" ).hover( function() {
+		$("#menu").animate({
+			top: -5
+		}, 100);
+	}, function() {
+		$("#menu").animate({
+			top: -45
+		}, 100);
+	})
 
 	//Z-Index for menu to be above jquery rendered pictures
 	$("#menu").css("z-index", 4000);
@@ -28,6 +45,16 @@ $( document ).ready( function() {
 	submit( "#submit", "#signup");
 	submit( "#send", "#contactme");
 })
+
+//returns page IDs as hard-coded for menu
+//CHANGE THIS FOR PAGES
+function checkmenu ( id, pages ) {
+	for ( var i = 1; i <= pages; i++ ) {
+		if ( id=="p"+i ) {
+			return "sp"+i;
+		}
+	}
+}
 
 //Where 'id' is the submit for the form and dest is the div that spans the form
 function submit( id, dest ) {
@@ -41,6 +68,7 @@ function submit( id, dest ) {
 //////////////////////////////////////////////////////
 //					Menu Bar Top 					//
 //////////////////////////////////////////////////////
+
 //Click function for signup and contact
 function signCon() {
 	$("#sps").click( function() {
@@ -51,16 +79,16 @@ function signCon() {
 	})
 }
 //Menu bar bottom border
-function view () {
+function view (pages) {
 	$('.window').on('inview', function(event, isInView) {
 		if (isInView) {
 			//console.log("<"+$(this).attr("id")+">");
-			$("#"+checkmenu( $(this).attr("id"))).css("border-bottom", "2px solid white");
+			$("#"+checkmenu( $(this).attr("id")), pages ).css("border-bottom", "2px solid white");
 			//console.log( "CheckMenu(x): "+checkmenu( $(this).attr("id")  ));
 
 		} else {
 			//console.log($(this).attr("id")+" out");
-			$("#"+checkmenu( $(this).attr("id"))).css("border-bottom", "0px none");
+			$("#"+checkmenu( $(this).attr("id")), pages ).css("border-bottom", "0px none");
 
 		}
 	} )
@@ -72,14 +100,6 @@ function slideToggle() {
 		$(this).stop(false, false).slideDown();
 	} else {
 		$(this).stop(false, false).slideUp();
-	}
-}
-//returns page IDs as hard-coded for menu
-function checkmenu ( id ) {
-	for ( var i = 1; i <= 6; i++ ) {
-		if ( id=="p"+i ) {
-			return "sp"+i;
-		}
 	}
 }
 //on button click, scroll to correct destination

@@ -17,28 +17,11 @@
 		<link rel="stylesheet" type="text/css" href="./css/index.css">
 
 		<!-------------------- Addons -------------------->
-		<!-- Windows jQuery AddOn -->
-		<script type="text/javascript" src="./js/windows.js"></script>
-		<!-- Countdown jQuery AddOn -->
-		<script type="text/javascript" src="./js/countdown.js"></script>
-		<link rel="stylesheet" type="text/css" href="./css/countdown.css">
-		<!-- Date jQuery AddOn -->
-		<script type="text/javascript" src="./js/date.js"></script>
-		<!-- InView jQuery AddOn -->
-		<script type="text/javascript" src="./js/inview.js"></script>
-		<!-- Flexslider jQuery AddOn -->
+		<!-- CSS -->
 		<link rel="stylesheet" href="./css/flexslider.css" type="text/css">
-		<script src="./js/jquery.flexslider.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			$(window).load(function() {
-		    	$('.flexslider').flexslider();
-			});
-		</script>
-		<!-- GitHub jQuery AddOn -->
 		<link rel="stylesheet" type="text/css" href="./css/base.css">
-		<script type="text/javascript" src="./js/jquery.github.js"></script>
-		<!-- SimpleWeather jQuery AddOn -->
-		<script type="text/javascript" src="./js/jquery.simpleWeather.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/countdown.css">
+
 
 	</head>
 	<body>
@@ -51,6 +34,10 @@
 			</div>
 		</section>
 		<section id="p2" class="window">
+		</section>
+		<section id="p3" class="window">
+		</section>
+		<section id="p4" class="window">
 			<div class="flexslider" id="content">
 				<ul class="slides"> 
 					<!--Images from unsplash.com-->
@@ -62,12 +49,7 @@
 				</ul>
 			</div>
 		</section>
-		<section id="p3" class="window">
-			<!-- Countdown & Date jQuery -->
-			<div id="countdown"> </div>
-			<p id="note"></p>
-		</section>
-		<section id="p4" class="window">
+		<section id="p5" class="window">
 			<div class="content">
 				<h2 id="gitHead">My Github Repos</h2>
 				<div id="github">
@@ -76,29 +58,27 @@
 				</div>
 			</div>
 		</section>
-		<section id="p5" class="window">
-		</section>
 		<section id="p6" class="window">
-			<div id="about" class="content">
-				<h3>About</h3><br>
-				<p></p>
-				<p>Somewhat of a disclaimer: This website is full of jQuery addons that are not my work, so those credits goes to the makers. The reason that I have made this website is for me to really play around with the addons mostly. It's a fun thing, this way, I get to explore some aspects of html/css and jQuery, without having to pain myself with thinking about what to populate it with.</p><br><br>
-				<h4>Add-Ons used</h4>
-				<p>Windows, Countdown, Date, Inview, Flexslider, GitHub, Weather</p>
+			<div class="content">
+				<div>Icons made by <a href="http://www.flaticon.com/authors/anton-saputro" title="Anton Saputro">Anton Saputro</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+				<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+
 			</div>
 		</section>
 
 		<!-- <button id="debug">Debug</button> -->
-		<ul id="menu">
-			<li><a id="sp1" href="#sp1">Home</a></li>
-			<li><a id="sp2" href="#sp2">Photos</a></li>
-			<li><a id="sp3" href="#sp3">Weekend</a></li>
-			<li><a id="sp4" href="#sp4">GitHub</a></li>
-			<li><a id="sp5" href="#sp5">Weather</a></li>
-			<li><a id="sp6" href="#sp6">About</a></li>
-			<li class="barbut"><a id="sps" href="#signup">Sign Up</a></li>
-			<li><a id="spc" href="#contactme">Contact</a></li>
-		</ul>
+		<div id="menuhov">
+			<ul id="menu">
+				<li><a id="sp1" href="#sp1"><img src="./png/home-w.png"></a></li>
+				<li><a id="sp2" href="#sp2"><img src="./png/contact-w.png"></a></li>
+				<li><a id="sp3" href="#sp3"><img src="./png/trip-w.png"></a></li>
+				<li><a id="sp4" href="#sp4"><img src="./png/photo-w.png"></a></li>
+				<li><a id="sp5" href="#sp5"><img src="./png/git-w.png"></a></li>
+				<li><a id="sp6" href="#sp6"></a></li>
+				<li class="barbut"><a id="sps" href="#signup">Sign Up</a></li>
+				<li><a id="spc" href="#contactme"><img src="./png/setting-w.png"></a></li>
+			</ul>
+		</div>
 
 		<div id="contactme">
 			<h3>Contact me</h3>
@@ -121,4 +101,22 @@
 
 
 	</body>
+	<footer>
+		<!-- Script -->
+		<!-- // <script type="text/javascript" src="./js/js.min.js"></script> -->
+		<!-- Windows jQuery AddOn -->
+		<script type="text/javascript" src="./js/windows.js"></script>
+		<!-- Countdown jQuery AddOn -->
+		<script type="text/javascript" src="./js/countdown.js"></script>
+		<!-- Date jQuery AddOn -->
+		<script type="text/javascript" src="./js/date.js"></script>
+		<!-- InView jQuery AddOn -->
+		<script type="text/javascript" src="./js/inview.js"></script>
+		<!-- Flexslider jQuery AddOn -->
+		<script src="./js/jquery.flexslider.js"></script>
+		<!-- GitHub jQuery AddOn -->
+		<script type="text/javascript" src="./js/jquery.github.js"></script>
+		<!-- SimpleWeather jQuery AddOn -->
+		<script type="text/javascript" src="./js/jquery.simpleWeather.js"></script>
+	</footer>
 </html>

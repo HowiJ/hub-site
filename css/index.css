@@ -129,12 +129,31 @@ input {
 /*//////////////////////////////*/
 /*			Top Menu 			*/
 /*//////////////////////////////*/
+#menuhov {
+	position: fixed;
+
+	top: 0;
+	left: 0;
+
+	height: 87px; /* normal 55px*/
+	width: 390px; /* normal 360px*/
+
+	/*outline: 2px solid white;*/
+}
 #menu {
 	position: fixed;
 	width: auto;
 	list-style-type: none;
-	top: 12px;
-	left: 15px;
+	top: -5px;
+	left: 5px;
+
+	padding: 12px 20px 20px 15px;
+
+	border: 2px solid #FFFFFF;
+
+	-webkit-border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 20px 20px;
 }
 #menu li {
 	display: inline-block;
@@ -169,11 +188,15 @@ input {
 }
 .window:nth-child(5) {
 	top: 400%;
-	background-color:  #7F7F7F;
+	background-color:  #666666;
 }
 .window:nth-child(6) {
 	top: 500%;
-	background-color:  #666666;
+	background-color:  #4C4C4C;
+}
+.window:nth-child(7) {
+	top: 600%;
+	background-color:  #4C4C4C;
 }
 /*//////////////////////////////*/
 /*			Windows 			*/
