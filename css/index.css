@@ -404,7 +404,12 @@ input {
 	width: 310px;
 	text-align: center;
 }
-
+#trips {
+	/*outline: 1px dashed green;*/
+	width: auto;
+	height: 730px;
+	overflow: auto;
+}
 .trip {
 	width: 250px;
 	background-color: #FFFFFF;

@@ -137,6 +137,7 @@ $( document ).ready( function() {
 		getTrip();
 		validateTrip();
 		createTrip();
+		$("#tripMenu").slideToggle();
 
 		return false;
 	})
