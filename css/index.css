@@ -255,6 +255,9 @@ input {
 }
 #refresh {
 	background-color: transparent;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 }
 #refresh:hover {
 	cursor: pointer;
@@ -265,6 +268,12 @@ input {
 .contentbody h1 {
 	font-size: 80px;
 	margin-top: 10%;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+.contentbody h1:hover {
+	cursor: default;
 }
 
 
@@ -279,6 +288,12 @@ input {
 	font-weight: normal;
 	text-decoration: underline;
 	margin-bottom: 20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+.pageTitle:hover {
+	cursor: default;
 }
 .pageMenu {
 	position: absolute;
@@ -286,6 +301,9 @@ input {
 	left: 90px;
 	width: 50px;
 	height: auto;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 
 
 	/*outline: 1px dashed #B3B3B3;*/
@@ -489,6 +507,12 @@ input {
 #gitHead {
 	font-size: 46px;
 	padding: 10px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+#gitHead:hover {
+	cursor: default;
 }
 .reps {
 	width: 100%;
@@ -496,6 +520,11 @@ input {
 }
 .reps * {
 	color: #808080;
+}
+#gitForm {
+	width: auto;
+	padding: 5px 10px;
+
 }
 
 /*//////////////////////////////*/

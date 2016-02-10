@@ -10,6 +10,7 @@ $( document ).ready( function() {
 	signCon();
 	view( pages );
 	weat();
+	$(".pageForm").hide();
 	$('.flexslider').flexslider();
 	$("#contactme").draggable();
 
@@ -52,7 +53,7 @@ $( document ).ready( function() {
 	//////////////////////////////////////////////////////
 	//					Page Cards  					//
 	//////////////////////////////////////////////////////
-	cCHide();
+	cHide("#cCHide", ".card");
 	$(".cards").mCustomScrollbar();
 	var cardName = "";
 	var cardDesc = "";
@@ -86,6 +87,7 @@ $( document ).ready( function() {
 	//return submit button
 	$("#iNewCard").click( function() {
 		getCard();
+		validateCard();
 		createCard();
 		createSlide();
 
@@ -104,21 +106,20 @@ $( document ).ready( function() {
 	function createCard() {
 		$("#cards").append("<li class='card' class='ui-state-default'><h4>"+cardName+"</h4><div class='desc'><p class='cardName'>"+cardName+"</p><p class='cardDesc'>"+cardDesc+"</p><p class='cardPhone'>"+cardPhone+"</p><p class='cardEmail'>"+cardEmail+"</p></div></li>");
 	}
-	function cCHide() {
-		$("#cCHide").click( function() {
-			$('*').css("cursor", "crosshair");
-			event.stopPropagation();
-			$(document).on("click", ".card", function() {
-				if (  $("*").css("cursor")=="crosshair"  ) {
-					$(this).remove();
-					$("*").css("cursor", "");
-				}
-			})
-			$(document).click( function() {
-				$("*").css("cursor", "");
-			})
-		});
 
+	function validateCard () {
+		if ( cardName == "") {
+			cardName="&nbsp;";
+		}
+		if ( cardDesc == "") {
+			cardDesc="&nbsp;";
+		}
+		if ( cardPhone == "") {
+			cardPhone="&nbsp;";
+		}
+		if ( cardEmail == "") {
+			cardEmail="&nbsp;";			
+		}
 	}
 
 	//////////////////////////////////////////////////////
@@ -132,8 +133,7 @@ $( document ).ready( function() {
 
 	$("#trips").sortable();
 
-	cTHide();
-	$(".pageForm").hide();
+	cHide("#cTHide", ".trip");
 	$("#tripFrom").datepicker();
 	$("#tripTo").datepicker();
 
@@ -151,12 +151,12 @@ $( document ).ready( function() {
 		$("#tripMenu").slideToggle();
 	})
 
-	//Remove Trip Button
-	function cTHide() {
-		$("#cTHide").click( function() {
+	//Remove Button for pages, button as in button to click, content as in what to hide
+	function cHide( button, content ) {
+		$(button).click( function() {
 			$('*').css("cursor", "crosshair");
 			event.stopPropagation();
-			$(document).on("click", ".trip", function() {
+			$(document).on("click", content, function() {
 				if (  $("*").css("cursor")=="crosshair"  ) {
 					$(this).remove();
 					$("*").css("cursor", "");
@@ -193,6 +193,31 @@ $( document ).ready( function() {
 		if ($("#tripLocation").val() == "") {
 			tripLocation = "&nbsp;";
 		}
+	}
+
+
+	//////////////////////////////////////////////////////
+	//					Page Github  					//
+	//////////////////////////////////////////////////////
+	var url = "";
+
+	cHide( "#cGHide", ".reps" )
+
+	$("#cGBut").click( function() {
+		$("#gitForm").slideToggle();
+	})
+
+	$("#gitUrl").keypress( function(e) {
+		if ( e.which == 13 ) {
+			url = $("#gitUrl").val();
+			createGit();
+			$("[data-repo]").github();
+			$("#gitForm").slideToggle();
+		}
+	})
+
+	function createGit () {
+		$("#github").append("<li class='reps' id='vDate' data-repo="+url+"></li>");
 	}
 
 
