@@ -60,6 +60,16 @@ $( document ).ready( function() {
 	var cardEmail = "";
 	var card = ""
 
+	//Flip buttons
+	$("#cCDFlip").click( function () {
+		$(".desc").siblings().show();
+		$(".desc").hide();
+	})
+	$("#cCDDFlip").click( function () {
+		$(".desc").siblings().hide();
+		$(".desc").show();
+	})
+
 	if ( $("#cards").text()!=""  ) {
 		$("#cardCreator").slideToggle();
 	} 
@@ -109,7 +119,83 @@ $( document ).ready( function() {
 
 	}
 
-	//Z INDEX///////////////////////////////////////////////
+	//////////////////////////////////////////////////////
+	//					Page Trips  					//
+	//////////////////////////////////////////////////////
+	var tripName = "";
+	var tripFrom = "";
+	var tripTo = '';
+	var tripLocation = '';
+	var tripComments = '';
+
+	cTHide();
+	$(".pageForm").hide();
+	$("#tripFrom").datepicker();
+	$("#tripTo").datepicker();
+
+	$("#tripSubmit").click( function() {
+		getTrip();
+		validateTrip();
+		createTrip();
+
+		return false;
+	})
+
+	//New trip button
+	$("#cTBut").click( function() {
+		$("#tripMenu").slideToggle();
+	})
+
+	//Remove Trip Button
+	function cTHide() {
+		$("#cTHide").click( function() {
+			$('*').css("cursor", "crosshair");
+			event.stopPropagation();
+			$(document).on("click", ".trip", function() {
+				if (  $("*").css("cursor")=="crosshair"  ) {
+					$(this).remove();
+					$("*").css("cursor", "");
+				}
+			})
+			$(document).click( function() {
+				$("*").css("cursor", "");
+			})
+		});
+	}
+
+	function getTrip() {
+		tripName = $("#tripName").val();
+		tripFrom = $("#tripFrom").val();
+		tripTo = $("#tripTo").val();
+		tripLocation = $("#tripLocation").val();
+		tripComments = $("#tripComments").val();
+	}
+
+	function createTrip() {
+		$("#trips").append("<div class='trip'><h3>"+tripName+"</h3><p class='tripDest'>"+tripLocation+"</p><b>From: </b><p class='tripDate'>"+tripFrom+"</p><b>To: </b><p class='tripDate'>"+tripTo+"</p><p class='tripComments'>"+tripComments+"</p></div>");
+	}
+
+	function validateTrip () {
+		if ($("#tripName").val() == "") {
+			console.log("trip Name absent");
+			tripName = "&nbsp;";
+		}
+		if ($("#tripFrom").val() == "") {
+			console.log("trip From absent");
+			tripFrom = "&nbsp;";
+		}
+		if ($("#tripTo").val() == "") {
+			console.log("trip To absent");
+			tripTo = "&nbsp;";
+		}
+		if ($("#tripLocation").val() == "") {
+			console.log("trip Dest absent");
+			tripLocation = "&nbsp;";
+		}
+	}
+
+
+	//Z INDEX/////////////////////////////////////////////
 	//Z-Index for menu to be above jquery rendered pictures
 	$("#menu").css("z-index", 9001);
 	$("#signup").css("z-index", 4000);
@@ -132,7 +218,7 @@ function checkmenu ( id, pages ) {
 //Where 'id' is the submit for the form and dest is the div that spans the form
 function submit( id, dest ) {
 	$(id).click( function() {
-		console.log( $('form').serialize() );
+		console.log( $(dest).serialize() );
 
 		$(dest).slideToggle();
 		return false;

@@ -25,7 +25,7 @@
 	<body>
 		<!-- Windows jQuery -->
 		<section id="p1" class="window">
-				<div class="content">
+				<div class="contentbody">
 					<h1>Welcome</h1>
 					<button id="refresh"><img src="./png/refresh-w.png"></button>
 					<div id="weather"></div>
@@ -33,29 +33,52 @@
 		</section>
 		<section id="p2" class="window">
 			<div class="contentbody">
-				<h1 class="pageTitle" id="cardTitle">Cards</h1>
+				<h2 class="pageTitle" id="cardTitle">Cards</h2>
 				<div id="cards"></div>
-				<button class="cCB" id="cCHide"><img src="./png/x-w.png"></button>
-				<form id="cardCreator">
+				<form id="cardCreator" class="pageForm">
+					<h3>New Card</h3>
 					<p>Name: <input type="text" id="iCardName" name="iCardName"></p>
 					<p>Description: <input type="text" id="iCardDesc" name="iCardName"></p>
 					<p>Phone: <input type="text" id="iCardPhone" name="iCardName"></p>
 					<p>Email: <input type="text" id="iCardEmail" name="iCardName"></p>
-					<input type="submit" id="iNewCard" value="Add Card">
+					<input type="submit" id="iNewCard" class="newSubmit" value="Add Card">
 				</form>
-				<button class="cCB" id="cCBut"><img src="./png/plus-w.png"></button>
+				<div class="pageMenu">
+					<button class="cCB" id="cCBut"><img src="./png/plus-w.png"></button>
+					<button class="cCB" id="cCHide"><img src="./png/x-w.png"></button>
+					<button class="cCB" id="cCDFlip"><img src="./png/flip-w.png"></button>
+					<button class="cCB" id="cCDDFlip"><img src="./png/fflip-w.png"></button>
+				</div>
 			</div>
 		</section>
 		<section id="p3" class="window">
 			<div class="contentbody">
-				<h1 class="pageTitle" id="tripTitle">Trips</h1>
+				<h2 class="pageTitle" id="tripTitle">Trips</h2>
 				<div id="trips">
 
+					<!-- <div class='trip'>
+						<h3>London 2016</h3>
+						<p class='tripDest'>London, Barcelona, Rome</p>
+						<b>From: </b><p class='tripDate'>2/23/2016</p>
+						<b>To: </b><p class='tripDate'>3/11/2016</p>
+						<p class='tripComments'>Will likely travel to other parts of Europe during the stay.</p>
+					</div>
+ -->
 				</div>
-				<button class="cCB" id="cTHide"><img src="./png/x-w.png"></button>
-				<form id="tripMenu">
+				<form id="tripMenu" class="pageForm">
+					<h3>New Trip</h3>
+					<p>Name of Trip: <input type="text" id="tripName"></p>
+					<p>From: <input type="text" id="tripFrom" name="tripFrom"></p>
+					<p>To: <input type="text" id="tripTo" name="tripTo"></p>
+					<p>Location: <input type="text" id="tripLocation" name="tripLocation"></p>
+					<textarea id="tripComments" placeholder="Comments"></textarea>
+
+					<input type="submit" id="tripSubmit" class="newSubmit" value="Add Trip">
 				</form>
-				<button class="cCB" id="cTBut"><img src="./png/plus-w.png"></button>
+				<div class="pageMenu">
+					<button class="cCB" id="cTBut"><img src="./png/plus-w.png"></button>
+					<button class="cCB" id="cTHide"><img src="./png/x-w.png"></button>
+				</div>
 			</div>
 		</section>
 		<section id="p4" class="window">
