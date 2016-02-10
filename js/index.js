@@ -60,6 +60,8 @@ $( document ).ready( function() {
 	var cardEmail = "";
 	var card = ""
 
+	$("#cards").sortable();
+
 	//Flip buttons
 	$("#cCDFlip").click( function () {
 		$(".desc").siblings().show();
@@ -100,7 +102,7 @@ $( document ).ready( function() {
 		cardEmail = $("#iCardEmail").val();
 	}
 	function createCard() {
-		$("#cards").append("<div class='card'><h4>"+cardName+"</h4><div class='desc'><p class='cardName'>"+cardName+"</p><p class='cardDesc'>"+cardDesc+"</p><p class='cardPhone'>"+cardPhone+"</p><p class='cardEmail'>"+cardEmail+"</p></div></div>");
+		$("#cards").append("<li class='card' class='ui-state-default'><h4>"+cardName+"</h4><div class='desc'><p class='cardName'>"+cardName+"</p><p class='cardDesc'>"+cardDesc+"</p><p class='cardPhone'>"+cardPhone+"</p><p class='cardEmail'>"+cardEmail+"</p></div></li>");
 	}
 	function cCHide() {
 		$("#cCHide").click( function() {
@@ -127,6 +129,8 @@ $( document ).ready( function() {
 	var tripTo = '';
 	var tripLocation = '';
 	var tripComments = '';
+
+	$("#trips").sortable();
 
 	cTHide();
 	$(".pageForm").hide();
@@ -173,24 +177,20 @@ $( document ).ready( function() {
 	}
 
 	function createTrip() {
-		$("#trips").append("<div class='trip'><h3>"+tripName+"</h3><p class='tripDest'>"+tripLocation+"</p><b>From: </b><p class='tripDate'>"+tripFrom+"</p><b>To: </b><p class='tripDate'>"+tripTo+"</p><p class='tripComments'>"+tripComments+"</p></div>");
+		$("#trips").append("<ul class='trip' class='ui-state-default'><h3>"+tripName+"</h3><p class='tripDest'>"+tripLocation+"</p><b>From: </b><p class='tripDate'>"+tripFrom+"</p><b>To: </b><p class='tripDate'>"+tripTo+"</p><p class='tripComments'>"+tripComments+"</p></ul>");
 	}
 
 	function validateTrip () {
 		if ($("#tripName").val() == "") {
-			console.log("trip Name absent");
 			tripName = "&nbsp;";
 		}
 		if ($("#tripFrom").val() == "") {
-			console.log("trip From absent");
 			tripFrom = "&nbsp;";
 		}
 		if ($("#tripTo").val() == "") {
-			console.log("trip To absent");
 			tripTo = "&nbsp;";
 		}
 		if ($("#tripLocation").val() == "") {
-			console.log("trip Dest absent");
 			tripLocation = "&nbsp;";
 		}
 	}
