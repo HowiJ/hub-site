@@ -59,6 +59,7 @@ $( document ).ready( function() {
 	//Contact me X button
 	$("#closeSettings").click( function() {
 		$("#settingsBox").slideToggle();
+		$(".settings").slideUp()
 	})
 	$("#close").click( function() {
 		$("#contactme").slideToggle();
@@ -124,7 +125,7 @@ $( document ).ready( function() {
 		$(".desc").show();
 	})
 
-	if ( $("#cards").text()==""  ) {
+	if ( $("#cards").html()==""  ) {
 		$("#cardCreator").slideToggle();
 	} 
 
@@ -194,6 +195,9 @@ $( document ).ready( function() {
 		validateTrip();
 		createTrip();
 		$("#tripMenu").slideToggle();
+		numberOfTrips++;
+		$("#tripTitle").text("Trips ("+numberOfTrips+")");
+
 
 		return false;
 	})
@@ -202,6 +206,10 @@ $( document ).ready( function() {
 	$("#cTBut").click( function() {
 		$("#tripMenu").slideToggle();
 	})
+
+	if ( $("#trips").html()==""  ) {
+		$("#tripMenu").slideToggle();
+	} 
 
 	//Remove Button for pages, button as in button to click, content as in what to hide
 	function cHide( button, content, type ) {
@@ -218,7 +226,7 @@ $( document ).ready( function() {
 					}
 					if ( type == "trips") {
 						numberOfTrips--;
-						$("#tripTitle").text("Trips ("+count+")");
+						$("#tripTitle").text("Trips ("+numberOfTrips+")");
 					}
 				}
 			})
