@@ -17,6 +17,104 @@ form * {
 form:hover {
 	cursor: context-menu;
 }
+body {
+	background-image: url("../img/bg.png");
+}
+/*//////////////////////////////*/
+/*			Login Page 			*/
+/*//////////////////////////////*/
+#loginPage {
+	height: 90%;
+	width: 90%;
+	border: 10px solid gray;
+	webkit-border-radius: 20px;
+	moz-border-radius: 20px;
+	border-radius: 20px;
+
+	top: 4%;
+	left: 4%;
+
+	position: absolute;
+	background-image: url("../img/bg1.png");
+}
+#loginPage h1{
+	color: #999999;
+	font-size: 50px;
+	margin: 10% 0 50px;
+	text-decoration: underline;
+}
+#loginPage form input {
+	color: #7F7F7F;
+}
+#loginButton:hover {
+	cursor: pointer;
+}
+
+/*//////////////////////////////*/
+/*			Settings 			*/
+/*//////////////////////////////*/
+#closeSettings {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+
+	width: auto;
+	height: auto;
+}
+#closeSettings:hover {
+	cursor: pointer;
+}
+#closeSettings img {
+	height: auto;
+	width: auto;
+	background-color: #FFFFFF;
+
+	border: 0 none;
+	outline: 0 none;
+}
+#settingsBox {
+	position: fixed;
+	width: 300px;
+	height: auto;
+
+	top: 60px;
+	left: 5px;
+
+	background-color: #FFFFFF;
+	border: 1px solid #7F7F7F;
+
+	webkit-border-radius: 10px;
+	moz-border-radius: 10px;
+	border-radius: 10px;
+
+
+}
+#settingsBox h3 {
+	color: #7F7F7F;
+	border-bottom: 1px solid #B3B3B3;
+	width: 250px;
+	margin: 20px auto 10px;
+}
+#settingsBox * {
+	color: #7F7F7F;
+	text-align: center;
+}
+#contactMeButton {
+	width: 184px;
+	padding: 4px 0;
+	border: 1px solid #999999;
+}
+#settingsBox button:hover {
+	cursor: pointer;
+}
+#logout {
+	margin-bottom: 20px;
+}
+#logout:hover {
+	cursor: pointer;
+}
+
+
 /*//////////////////////////////*/
 /*			Contact me 			*/
 /*//////////////////////////////*/
@@ -42,10 +140,10 @@ form:hover {
 	height: 380px;
 
 	top: 60px;
-	left: 5px;
+	left: 305px;
 
 	background-color: #FFFFFF;
-	border: 1px solid #7F7F7Ffd;
+	border: 1px solid #7F7F7F;
 
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
@@ -148,7 +246,7 @@ input {
 /*//////////////////////////////*/
 /*			Top Menu 			*/
 /*//////////////////////////////*/
-#menuhov {
+#menuhovO {
 	position: fixed;
 
 	top: 0;

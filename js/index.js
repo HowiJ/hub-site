@@ -4,18 +4,30 @@ $( document ).ready( function() {
 
 	$("#signup").hide();
 	$("#contactme").hide();
-	windows();
-	flex();
-	ctd();
-	signCon();
-	view( pages );
-	weat();
-	$(".pageForm").hide();
-	$('.flexslider').flexslider();
-	$("#contactme").draggable();
+	$("#contentPages").hide();
+	$("#settingsBox").hide();
 
+	// $("#loginPage").hide();
+	$(".pageForm").hide();
+
+	//Initializes Windows jquery addon
+	windows();
+	//Initializes FlexSlider for the Images
+	flex();
+	//Initializes Countdown Clock should it be used **Unused**
+	ctd();
+	//Initializes Weather jquery addon
+	weat();
 	//Github jQuery initialize
 	$("[data-repo]").github();
+
+	//Signup and Contact slide Toggles
+	signCon();
+	//For Menu bar to tell which page you're on **Unused**
+	view( pages );
+	$('.flexslider').flexslider();
+	// $("#contactme").draggable();
+
 
 	//undo comment below when ready for sign up.
 	$(".barbut").hide();
@@ -29,7 +41,7 @@ $( document ).ready( function() {
 	$("#refresh").click( function() {weat()});
 
 	//on hover, show menu, on !hover, hide
-	$( "#menuhov" ).hover( function() {
+	$( ".menuhov" ).hover( function() {
 		$("#menu").animate({
 			top: -5
 		}, 100);
@@ -45,15 +57,50 @@ $( document ).ready( function() {
 	submit( "#send", "#contactme");
 
 	//Contact me X button
+	$("#closeSettings").click( function() {
+		$("#settingsBox").slideToggle();
+	})
 	$("#close").click( function() {
 		$("#contactme").slideToggle();
 	})
 
 
 	//////////////////////////////////////////////////////
+	//					Login Page  					//
+	//////////////////////////////////////////////////////
+	var user = $("#user").val();
+	var pass = $("#pass").val();
+
+	$("#loginButton").click( function() {
+		$("#loginPage").fadeOut( function(){ $("#contentPages").fadeIn(); } );
+
+		user = $("#user").val();
+		pass = $("#pass").val();		
+
+		console.log("Username: "+user+" Password: "+pass);
+
+		return false;
+	});
+
+	//////////////////////////////////////////////////////
+	//					Settings Box  					//
+	//////////////////////////////////////////////////////
+
+	$("#logout").click( function(){ 
+		$("#settingsBox").slideUp();
+		$(".settings").slideUp();
+
+		$("#contentPages").fadeOut();
+		$("#loginPage").fadeIn();
+
+		return false;
+	});
+
+	//////////////////////////////////////////////////////
 	//					Page Cards  					//
 	//////////////////////////////////////////////////////
-	cHide("#cCHide", ".card");
+	cHide("#cCHide", ".card", "cards");
+
 	$(".cards").mCustomScrollbar();
 	var cardName = "";
 	var cardDesc = "";
@@ -61,7 +108,11 @@ $( document ).ready( function() {
 	var cardEmail = "";
 	var card = ""
 
+	var numberOfCards = 0;
+
 	$("#cards").sortable();
+
+	$("#cardTitle").text("Cards ("+numberOfCards+")");
 
 	//Flip buttons
 	$("#cCDFlip").click( function () {
@@ -73,7 +124,7 @@ $( document ).ready( function() {
 		$(".desc").show();
 	})
 
-	if ( $("#cards").text()!=""  ) {
+	if ( $("#cards").text()==""  ) {
 		$("#cardCreator").slideToggle();
 	} 
 
@@ -82,21 +133,20 @@ $( document ).ready( function() {
 	})
 
 	$("#cCBut").click( function() {
-		createSlide();
+		$("#cardCreator").slideToggle();
 	})
 	//return submit button
 	$("#iNewCard").click( function() {
 		getCard();
 		validateCard();
 		createCard();
-		createSlide();
+		$("#cardCreator").slideToggle();
+
+		numberOfCards++;
+		$("#cardTitle").text("Cards ("+numberOfCards+")");
 
 		return false;
 	})
-
-	function createSlide() {
-		$("#cardCreator").slideToggle();
-	}
 	function getCard() {
 		cardName = $("#iCardName").val();
 		cardDesc = $("#iCardDesc").val();
@@ -130,10 +180,12 @@ $( document ).ready( function() {
 	var tripTo = '';
 	var tripLocation = '';
 	var tripComments = '';
+	var numberOfTrips = 0;
 
 	$("#trips").sortable();
+	$("#tripTitle").text("Trips ("+numberOfTrips+")");
 
-	cHide("#cTHide", ".trip");
+	cHide("#cTHide", ".trip", "trips");
 	$("#tripFrom").datepicker();
 	$("#tripTo").datepicker();
 
@@ -152,7 +204,7 @@ $( document ).ready( function() {
 	})
 
 	//Remove Button for pages, button as in button to click, content as in what to hide
-	function cHide( button, content ) {
+	function cHide( button, content, type ) {
 		$(button).click( function() {
 			$('*').css("cursor", "crosshair");
 			event.stopPropagation();
@@ -160,6 +212,14 @@ $( document ).ready( function() {
 				if (  $("*").css("cursor")=="crosshair"  ) {
 					$(this).remove();
 					$("*").css("cursor", "");
+					if ( type == "cards") {
+						numberOfCards--;
+						$("#cardTitle").text("Cards ("+numberOfCards+")");
+					}
+					if ( type == "trips") {
+						numberOfTrips--;
+						$("#tripTitle").text("Trips ("+count+")");
+					}
 				}
 			})
 			$(document).click( function() {
@@ -200,8 +260,9 @@ $( document ).ready( function() {
 	//					Page Github  					//
 	//////////////////////////////////////////////////////
 	var url = "";
+	var numberOfGits
 
-	cHide( "#cGHide", ".reps" )
+	cHide( "#cGHide", ".reps", "gits" );
 
 	$("#cGBut").click( function() {
 		$("#gitForm").slideToggle();
@@ -260,6 +321,9 @@ function signCon() {
 		$("#signup").slideToggle();
 	})
 	$("#spc").click( function() {
+		$("#settingsBox").slideToggle();
+	})
+	$("#contactMeButton").click( function() {
 		$("#contactme").slideToggle();
 	})
 }
